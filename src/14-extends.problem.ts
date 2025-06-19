@@ -6,6 +6,10 @@ import { Equal, Expect } from "./helpers/type-utils";
  * make it more DRY?
  */
 
+interface Enitiy {
+  id: string;
+}
+
 interface User {
   id: string;
   firstName: string;
@@ -26,5 +30,5 @@ interface Comment {
 type tests = [
   Expect<Equal<User, { id: string; firstName: string; lastName: string }>>,
   Expect<Equal<Post, { id: string; title: string; body: string }>>,
-  Expect<Equal<Comment, { id: string; comment: string }>>,
+  Expect<Equal<Comment, { id: string; comment: string }>>
 ];
